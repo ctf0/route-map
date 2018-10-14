@@ -1,0 +1,101 @@
+[v-cloak] {
+    display: none;
+}
+
+thead th[class^='is-']:not(:last-of-type) {
+    border-left: none;
+}
+
+td,
+th {
+    &.is-dark {
+        border-top-color: initial !important;
+    }
+}
+
+thead th {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: white;
+}
+
+$warning: #ffdd57;
+$danger: #ff3860;
+$info: #3273dc;
+$primary: #00d1b2;
+$success: #23d160;
+$dark: #363636;
+$black: #0a0a0a;
+
+.is-danger,
+.is-info,
+.is-primary,
+.is-success,
+.is-dark,
+.is-black {
+    color: white !important;
+}
+
+.is-warning {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: $warning;
+}
+
+.is-danger {
+    background-color: $danger;
+}
+
+.is-info {
+    background-color: $info;
+}
+
+.is-primary {
+    background-color: $primary;
+}
+
+.is-success {
+    background-color: $success;
+}
+
+.is-dark {
+    background: $dark;
+}
+
+.is-black {
+    background-color: $black;
+}
+
+td.empty-cell {
+    border-top: none;
+    border-bottom: none;
+}
+
+.methods {
+    margin-bottom: 5px;
+    padding: 0.25rem;
+    text-align: center;
+    border-radius: 4px;
+
+    &:first-of-type {
+        margin-top: 5px;
+    }
+}
+
+tr[data-toggle] {
+    &:hover {
+        cursor: pointer;
+
+        th {
+            border-color: transparent;
+            background: linear-gradient(45deg, #ff9c89 0, #ff6696 100%);
+            text-shadow: 2px 2px rgba($info, 0.5);
+        }
+    }
+}
+
+// utils
+.static-cell {
+    width: 1%;
+    white-space: nowrap;
+}

@@ -1,0 +1,32 @@
+{
+    "name": "ctf0/route-map",
+    "description": "list all app routes",
+    "homepage": "https://github.com/ctf0/route-map",
+    "license": "MIT",
+    "keywords": [
+        "Laravel",
+        "routes list"
+    ],
+    "authors": [
+        {
+            "name": "Muah",
+            "email": "muah003@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : "~7.0",
+       "illuminate/support": "~5.4.0|~5.5.0|~5.6.0|~5.7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ctf0\\LaravelGuess\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ctf0\\RouteMap\\RouteMapServiceProvider"
+            ]
+        }
+    }
+}
