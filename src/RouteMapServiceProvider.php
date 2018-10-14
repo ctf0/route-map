@@ -30,6 +30,11 @@ class RouteMapServiceProvider extends ServiceProvider
      */
     protected function packagePublish()
     {
+        // config
+        $this->publishes([
+            __DIR__ . '/config' => config_path(),
+        ], 'config');
+
         // resources
         $this->publishes([
             __DIR__ . '/resources/assets' => resource_path('assets/vendor/RouteMap'),
