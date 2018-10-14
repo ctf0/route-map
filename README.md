@@ -1,4 +1,4 @@
-# RouteMpa
+# RouteMap
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/ctf0/route-map.svg)](https://packagist.org/packages/ctf0/route-map) [![Total Downloads](https://img.shields.io/packagist/dt/ctf0/route-map.svg)](https://packagist.org/packages/ctf0/route-map)
 
