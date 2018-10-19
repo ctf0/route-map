@@ -1,6 +1,8 @@
-# RouteMap
-
-[![Latest Stable Version](https://img.shields.io/packagist/v/ctf0/route-map.svg)](https://packagist.org/packages/ctf0/route-map) [![Total Downloads](https://img.shields.io/packagist/dt/ctf0/route-map.svg)](https://packagist.org/packages/ctf0/route-map)
+<h1 align="center">
+    RouteMap
+    <br>
+    <a href="https://packagist.org/packages/ctf0/route-map"><img src="https://img.shields.io/packagist/v/ctf0/route-map.svg" alt="Latest Stable Version" /></a> <a href="https://packagist.org/packages/ctf0/route-map"><img src="https://img.shields.io/packagist/dt/ctf0/route-map.svg" alt="Total Downloads" /></a>
+</h1>
 
 <p align="center">
     <img alt="main" src="https://user-images.githubusercontent.com/7388088/46914425-12b25d00-cfa6-11e8-8a80-6a4b8a5548ad.jpg"/>
