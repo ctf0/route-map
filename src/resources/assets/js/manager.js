@@ -5,7 +5,7 @@ import 'vue-awesome/icons/arrow-up'
 import 'vue-awesome/icons/arrow-down'
 import 'vue-awesome/icons/arrow-left'
 import 'vue-awesome/icons/arrow-right'
-Vue.component('icon', require('vue-awesome/components/Icon'))
+Vue.component('icon', require('vue-awesome/components/Icon').default)
 
 // component
-Vue.component('RouteMap', require('./Routes.vue'))
+Vue.component('RouteMap', require('./Routes.vue').default)
