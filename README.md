@@ -28,7 +28,7 @@
 
     `php artisan vendor:publish --provider="ctf0\RouteMap\RouteMapServiceProvider"`
 
-- after installation, run php artisan `rm:setup` to add
+- after installation, run `php artisan rm:setup` to add
     + package routes to `routes/web.php`
     + package assets compiling to `webpack.mix.js`
 
