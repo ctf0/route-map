@@ -28,7 +28,7 @@
 
     `php artisan vendor:publish --provider="ctf0\RouteMap\RouteMapServiceProvider"`
 
-- after installation, package will auto-add
+- after installation, run php artisan `rm:setup` to add
     + package routes to `routes/web.php`
     + package assets compiling to `webpack.mix.js`
 
@@ -92,11 +92,11 @@ return [
      * method type background class
      */
     'method_colours' => [
-        'GET'    => 'is-primary',
-        'HEAD'   => 'is-light',
-        'POST'   => 'is-info',
-        'PUT'    => 'is-warning',
-        'PATCH'  => 'is-warning',
+        'GET' => 'is-primary',
+        'HEAD' => 'is-light',
+        'POST' => 'is-info',
+        'PUT' => 'is-warning',
+        'PATCH' => 'is-warning',
         'DELETE' => 'is-danger',
     ],
 
