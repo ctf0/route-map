@@ -95,7 +95,7 @@
                                                 <td class="empty-cell"></td>
                                                 <td class="static-cell">
                                                     @foreach($data[$i]->methods() as $method)
-                                                        <p data-methods class="methods {{ array_get($method_colours, $method) }}">{{ $method }}</p>
+                                                        <p data-methods class="methods {{ $method_colours[$method] }}">{{ $method }}</p>
                                                     @endforeach
                                                 </td>
                                                 <td class="domain" data-domain>{{ $data[$i]->domain() }}</td>

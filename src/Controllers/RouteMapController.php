@@ -12,9 +12,9 @@ class RouteMapController extends Controller
     public function index()
     {
         $config               = config('route-map');
-        $this->ignore_pattern = array_get($config, 'ignore_uri');
-        $this->hide_methods   = array_get($config, 'hide_methods');
-        $method_colours       = array_get($config, 'method_colours');
+        $this->ignore_pattern = $config['ignore_uri'];
+        $this->hide_methods   = $config['hide_methods'];
+        $method_colours       = $config['method_colours'];
 
         $routes      = app('router')->getRoutes();
         $total       = count($routes);
