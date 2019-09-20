@@ -2,6 +2,7 @@
 
 namespace ctf0\RouteMap\Controllers;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 
 class RouteMapController extends Controller
@@ -11,13 +12,13 @@ class RouteMapController extends Controller
 
     public function index()
     {
-        $config               = config('route-map');
+        $config = config('route-map');
         $this->ignore_pattern = $config['ignore_uri'];
-        $this->hide_methods   = $config['hide_methods'];
-        $method_colours       = $config['method_colours'];
+        $this->hide_methods = $config['hide_methods'];
+        $method_colours = $config['method_colours'];
 
-        $routes      = app('router')->getRoutes();
-        $total       = count($routes);
+        $routes = app('router')->getRoutes();
+        $total = count($routes);
         $routes_list = $this->groupSimilar($routes, 'uri', '/');
 
         $middlewareClosure = function ($middleware) {
@@ -36,17 +37,17 @@ class RouteMapController extends Controller
     protected function groupSimilar($array, $fieldName, $similarity)
     {
         $crntLocale = app()->getLocale();
-        $list       = [];
+        $list = [];
 
         foreach ($array as $one) {
-            $field        = $one->$fieldName();
+            $field = $one->$fieldName();
             $one->methods = array_diff($one->methods, $this->hide_methods);
 
             // for multi locale
             $field = preg_replace('/^(\/)?' . $crntLocale . '\//', '', $field);
 
             // loop
-            if (str_contains($field, $similarity)) {
+            if (Str::contains($field, $similarity)) {
                 $found = strstr($field, $similarity, true);
 
                 if (preg_match('/^' . $found . '/', $field)) {

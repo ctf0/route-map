@@ -2,12 +2,13 @@
 
 namespace ctf0\RouteMap\Commands;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 
 class PackageSetup extends Command
 {
     protected $file;
-    protected $signature   = 'rm:setup';
+    protected $signature = 'rm:setup';
     protected $description = 'setup package routes & assets compiling';
 
     /**
@@ -29,7 +30,7 @@ class PackageSetup extends Command
     {
         // routes
         $route_file = base_path('routes/web.php');
-        $search     = 'RouteMap';
+        $search = 'RouteMap';
 
         if ($this->checkExist($route_file, $search)) {
             $data = "\n// RouteMap\nctf0\RouteMap\RouteMap::routes();";
@@ -39,7 +40,7 @@ class PackageSetup extends Command
 
         // mix
         $mix_file = base_path('webpack.mix.js');
-        $search   = 'RouteMap';
+        $search = 'RouteMap';
 
         if ($this->checkExist($mix_file, $search)) {
             $data = "\n// RouteMap\nmix.sass('resources/assets/vendor/RouteMap/sass/style.scss', 'public/assets/vendor/RouteMap/style.css')";
@@ -60,6 +61,6 @@ class PackageSetup extends Command
      */
     protected function checkExist($file, $search)
     {
-        return $this->file->exists($file) && !str_contains($this->file->get($file), $search);
+        return $this->file->exists($file) && !Str::contains($this->file->get($file), $search);
     }
 }

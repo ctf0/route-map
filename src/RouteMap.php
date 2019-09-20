@@ -2,17 +2,19 @@
 
 namespace ctf0\RouteMap;
 
+use Illuminate\Support\Str;
+
 class RouteMap
 {
     protected $editors = [
-        'sublime'  => 'subl://open?url=file://',
+        'sublime' => 'subl://open?url=file://',
         'textmate' => 'txmt://open?url=file://',
-        'emacs'    => 'emacs://open?url=file://',
-        'macvim'   => 'mvim://open/?url=file://',
+        'emacs' => 'emacs://open?url=file://',
+        'macvim' => 'mvim://open/?url=file://',
         'phpstorm' => 'phpstorm://open?file=',
-        'idea'     => 'idea://open?file=',
-        'vscode'   => 'vscode://file/',
-        'atom'     => 'atom://core/open/file?filename=',
+        'idea' => 'idea://open?file=',
+        'vscode' => 'vscode://file/',
+        'atom' => 'atom://core/open/file?filename=',
     ];
 
     /**
@@ -25,7 +27,7 @@ class RouteMap
      */
     public function isUrl($method, $url)
     {
-        return in_array('GET', $method) && !str_contains($url, config('route-map.dont_link'));
+        return in_array('GET', is_array($method) ? $method : [$method]) && !Str::contains($url, config('route-map.dont_link'));
     }
 
     /**
@@ -38,7 +40,7 @@ class RouteMap
     public function getUrl($file)
     {
         $class = preg_replace('/@.*/', '', $file);              // remove the @method
-        $path  = (new \ReflectionClass($class))->getFileName(); // get the full path
+        $path = (new \ReflectionClass($class))->getFileName(); // get the full path
 
         return $this->editors[config('route-map.editor')] . rawurlencode($path) . '&line=0'; // generate the url
     }
