@@ -27,5 +27,11 @@
                 "ctf0\\RouteMap\\RouteMapServiceProvider"
             ]
         }
-    }
+    },
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/ctf0"
+        }
+    ]
 }
