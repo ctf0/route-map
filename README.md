@@ -76,3 +76,7 @@
 ## Usage
 
 - visit `localhost:8000/route-map`
+
+### Security
+
+If you discover any security-related issues, please email [ctf0-dev@protonmail.com](mailto:ctf0-dev@protonmail.com).
